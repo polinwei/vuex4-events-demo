@@ -1,7 +1,9 @@
 import { createStore } from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 import EventService from '@/services/EventService'
 
 export default createStore({
+  plugins: [createPersistedState()],
   state: {
     user: 'Adam Jahr',
     events: [],

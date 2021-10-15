@@ -29,6 +29,26 @@
       "date": "July 22, 2022",
       "time": "11:00",
       "organizer": "Carey Wales"
+    },
+    {
+      "id": "5ff3c3f1-2bbe-4a61-a866-8311f76c75e3",
+      "category": "food",
+      "title": "麥當勞",
+      "description": "漢堡",
+      "location": "Taichung",
+      "date": "2021-10-10",
+      "time": "10:10",
+      "organizer": "Adam Jahr"
+    },
+    {
+      "id": "3736763d-2904-4f60-b34d-c9b1d0033958",
+      "category": "education",
+      "title": "Vuejs 3",
+      "description": "Learning Vuejs 3",
+      "location": "Taiwan",
+      "date": "2020-10-15",
+      "time": "10:00",
+      "organizer": "Adam Jahr"
     }
   ]
 }

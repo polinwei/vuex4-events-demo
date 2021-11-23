@@ -9,6 +9,7 @@ const routes = [
   {
     path: '/',
     name: 'EventList',
+    props: route => ({ page: parseInt(route.query.page) || 1 }),
     component: EventList
   },
   {

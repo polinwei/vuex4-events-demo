@@ -49,6 +49,16 @@
       "date": "2020-10-15",
       "time": "10:00",
       "organizer": "Adam Jahr"
+    },
+    {
+      "id": "b3e07b2f-cc67-410d-8549-413e634d05c2",
+      "category": "sustainability",
+      "title": "嚴格相等（===）",
+      "description": "嚴格相等比較兩個值，而被比較的兩個值都不會轉換成其他型別。如果值是不同型別，就會被視為不相等。如果兩值型別相同但不是數字，若值相同，則為相等。此外，如果兩個值皆為數字，只要他們是 NaN 以外的同一值，或者 +0 和 -0，則為相等。",
+      "location": "Office",
+      "date": "2021-10-27",
+      "time": "10:10",
+      "organizer": "Adam Jahr"
     }
   ]
 }

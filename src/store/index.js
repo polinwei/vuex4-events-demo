@@ -7,14 +7,16 @@ export default createStore({
   state: {
     user: 'Adam Jahr',
     events: [],
+    totalEvents: 0,
     event: null
   },
   mutations: {
     ADD_EVENT(state, event) {
       state.events.push(event)
     },
-    SET_EVENTS(state, events) {
-      state.events = events
+    SET_EVENTS(state, response) {
+      state.events = response.data
+      state.totalEvents = response.headers['x-total-count']
     },
     SET_EVENT(state, event) {
       state.event = event
@@ -31,10 +33,10 @@ export default createStore({
           throw error
         })
     },
-    fetchEvents({ commit }) {
-      return EventService.getEvents()
+    fetchEvents({ commit }, { perPage, currentPage }) {
+      return EventService.getEvents(perPage, currentPage)
         .then(response => {
-          commit('SET_EVENTS', response.data)
+          commit('SET_EVENTS', response)
         })
         .catch(error => {
           throw error

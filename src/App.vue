@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
+      {{ currentTime }} |
       <router-link :to="{ name: 'EventList' }">Events</router-link> |
       <router-link :to="{ name: 'About' }">About</router-link> |
       <router-link :to="{ name: 'EventCreate' }">Create Event</router-link>
@@ -8,7 +9,35 @@
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      currentTime: undefined
+    }
+  },
+  created() {
+    this.$cron.add([{ time:10000,method:"doToken", autoStart:false }])
+  },
+  mounted() {
+    this.$cron.start("doToken")
+    console.log(this.$cron.jobsRuning())
+  },
+  methods: {
+    load() {
+      this.currentTime = new Date().toLocaleTimeString()
+      console.log('call load')
+    },
+    doToken(){
+      console.log('call toToken')
+    },
+  },
+  cron: {
+    time: 1000,
+    method: 'load'
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
